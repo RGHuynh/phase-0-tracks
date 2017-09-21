@@ -17,3 +17,6 @@ without affecting the master project.
 descriptive.
 
 * Merge conflict is when there is an issue between the file you're combining and the master file. Usually this happens when someone change a line that is the sane as the master code original script.
+
+
+yoyo
