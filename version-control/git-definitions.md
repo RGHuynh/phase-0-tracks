@@ -10,7 +10,7 @@
 * version control is a system that keeps track of changes to a file over time and allow
 the user to recall specific version.
 
-*branch is an extension of the master file. It allows the programmer to safely work on the project
+* branch is an extension of the master file. It allows the programmer to safely work on the project
 without affecting the master project.
 
 * Commit is a saved snapshot with description of the project you're working on. A good commit message is
