@@ -6,3 +6,4 @@ to accept data from the user
 * <div> element - contains the flow content and is used for styling
 * <fieldset> element - is used to group several controls as well as label within
 the web form. It's for organizational purpose.
+* <button> element - represent a clickable button.
