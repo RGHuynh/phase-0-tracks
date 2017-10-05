@@ -19,3 +19,15 @@
 .job:hover{
   background-color: grey;
 }
+
+#resume-title ~ section{
+  color: red;
+}
+
+#contact-info > p {
+  color: blue;
+}
+
+#contact-info p + p{
+  color: green;
+}
