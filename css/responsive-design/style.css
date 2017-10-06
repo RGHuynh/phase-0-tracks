@@ -11,7 +11,8 @@ cite {
 
 #external-links ul {
   list-style-type: none;
-  padding-left: 0px;
+
+  border: black solid 1px;
 }
 
 /* you're welcome to edit the
@@ -33,19 +34,33 @@ figcaption {
 
 body{
   max-width: 960px;
-  /*min-width: 450px;*/
-  border: green solid 1px;
+  min-width: 450px;
+  border: black solid 1px;
+  display: flex;
 }
 
 #external-links{
   width: 20%;
-  display: inline-block;
   vertical-align: top;
-
 }
+
 
 main{
   width: 78%;
-  display: inline-block;
   border: black solid 1px;
+}
+
+@media screen and (max-width: 500px){
+  body{
+    background-color: hotpink;
+    flex-direction: column;
+  }
+  #external-links{
+    width: 100%;
+  }
+  li{
+    border: green solid 1px;
+    display:inline-block;
+  }
+
 }
