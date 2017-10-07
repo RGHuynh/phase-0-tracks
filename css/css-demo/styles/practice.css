@@ -1,0 +1,33 @@
+/**{
+  border: red solid 1px;
+}*/
+#contact-info{
+  font-size: .8em;
+}
+
+.job{
+  background-color: #e9e5dc;
+  border-radius: 25px;
+  padding: 5px 0px 5px 10px;
+  margin: 5px 0px 5px 0px;
+}
+
+.job{
+  background-color: white;
+}
+
+.job:hover{
+  background-color: grey;
+}
+
+#resume-title ~ section{
+  color: red;
+}
+
+#contact-info > p {
+  color: blue;
+}
+
+#contact-info p + p{
+  color: green;
+}
