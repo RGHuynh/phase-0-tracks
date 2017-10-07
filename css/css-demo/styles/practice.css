@@ -31,3 +31,7 @@
 #contact-info p + p{
   color: green;
 }
+
+.unorderlist{
+  font-size: .8em;
+}
