@@ -17,3 +17,11 @@ user_adoption_input = gets.chomp
 # estimate age
 print "What is the estimate age of the hamster?: "
 hamster_est_age = gets.chomp.to_i
+
+# print summary
+
+puts "Hamster name: #{hamster_name}"
+puts "Hamster volumn prefered: #{hamster_volumn_lvl}"
+puts "Hamster fur color: #{hamster_fur_clr}"
+puts "Client oppinion on adoption: #{user_adoption_input}"
+puts "Hamster estimate age: #{hamster_est_age}"
