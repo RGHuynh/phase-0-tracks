@@ -1,7 +1,7 @@
 print "how many employees?: "
 n = gets.chomp
 
-for employees in 1..n
+for employees in 1..n.to_i
   # Ask for user name
   print "What is your name?: "
   user_name = gets.chomp
@@ -26,17 +26,35 @@ for employees in 1..n
   print "Would you like to enroll in the company health insurance?(y/n): "
   user_enrollment_ans = gets.chomp
 
-
-  puts case
-  when user_est_age.to_s != user_age && order_answer == "n" && user_enrollment_ans == "n" && user_name == "Drake Cula" || user_name == "Tu Fang"
-    puts "Definitely a vampire."
-  when user_est_age.to_s == user_age && order_answer == "y"
-    puts "Probably not a vampire."
-  when (user_est_age.to_s != user_age && order_answer == "n") && user_enrollment_ans == "n"
-    puts "Almost certainly a vampire."
-  when user_est_age.to_s != user_age && (order_answer == "n" || user_enrollment_ans == "n")
+  # allergies question
+  def goto_end
     puts "Probably a vampire."
-  else
-    puts "Results inconclusive."
   end
+
+  user_answer = Array.new
+
+  until user_answer.include?('done') || user_answer.include?('sunshine')
+    puts "Do you have any allergies?"
+    user_answer.push(gets.chomp)
+  end
+
+  user_answer.delete('done')
+
+  if !user_answer.include?('sunshine')
+    puts case
+    when user_est_age.to_s != user_age && order_answer == "n" && user_enrollment_ans == "n" && user_name == "Drake Cula" || user_name == "Tu Fang"
+      puts "Definitely a vampire."
+    when user_est_age.to_s == user_age && order_answer == "y"
+      puts "Probably not a vampire."
+    when (user_est_age.to_s != user_age && order_answer == "n") && user_enrollment_ans == "n"
+      puts "Almost certainly a vampire."
+    when user_est_age.to_s != user_age && (order_answer == "n" || user_enrollment_ans == "n")
+      puts "Probably a vampire."
+    else
+      puts "Results inconclusive."
+    end
+  else
+    goto_end
+  end
+
 end
