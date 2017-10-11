@@ -1,4 +1,7 @@
+print "how many employees?: "
+n = gets.chomp
 
+for employees in 1..n
   # Ask for user name
   print "What is your name?: "
   user_name = gets.chomp
@@ -24,15 +27,16 @@
   user_enrollment_ans = gets.chomp
 
 
-case
-when user_est_age.to_s != user_age && order_answer == "n" && user_enrollment_ans == "n" && user_name == "Drake Cula" || user_name == "Tu Fang"
-  puts "Definitely a vampire."
-when user_est_age.to_s == user_age && order_answer == "y"
-  puts "Probably not a vampire."
-when (user_est_age.to_s != user_age && order_answer == "n") && user_enrollment_ans == "n"
-  puts "Almost certainly a vampire."
-when user_est_age.to_s != user_age && (order_answer == "n" || user_enrollment_ans == "n")
-  puts "Probably a vampire."
-else
-  puts "Results inconclusive."
+  puts case
+  when user_est_age.to_s != user_age && order_answer == "n" && user_enrollment_ans == "n" && user_name == "Drake Cula" || user_name == "Tu Fang"
+    puts "Definitely a vampire."
+  when user_est_age.to_s == user_age && order_answer == "y"
+    puts "Probably not a vampire."
+  when (user_est_age.to_s != user_age && order_answer == "n") && user_enrollment_ans == "n"
+    puts "Almost certainly a vampire."
+  when user_est_age.to_s != user_age && (order_answer == "n" || user_enrollment_ans == "n")
+    puts "Probably a vampire."
+  else
+    puts "Results inconclusive."
+  end
 end
