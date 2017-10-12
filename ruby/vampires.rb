@@ -56,5 +56,12 @@ for employees in 1..n.to_i
   else
     goto_end
   end
-
 end
+
+dots = "."
+for sec in 1..4
+  sleep(1)
+  puts dots
+  dots += "."
+end
+puts "\nActually, never mind! What do these questions have to do with anything? Let's all be friends."
