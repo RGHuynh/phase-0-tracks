@@ -52,4 +52,20 @@ end
 
 # This nested method works bc the return value from encrypt_password is carried
 # to decode_pw as the new value
-p decode_pw(encrypt_password("swordfish"))
+# p decode_pw(encrypt_password("swordfish"))
+
+
+# ask the secrete agent if they want to encrypt and decode a pw
+puts "Do you want to decrypt or encrypt the password"
+user_input = gets.chomp
+
+# ask for the password
+puts "Enter password"
+locked_pw = gets.chomp
+
+# pull method base on user input
+if user_input == "decrypt"
+  puts decode_pw(locked_pw)
+elsif user_input == "encrypt"
+  puts encrypt_password(locked_pw)
+end
