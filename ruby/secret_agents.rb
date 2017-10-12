@@ -44,8 +44,12 @@ def decode_pw(encrypted_pw)
 end
 
 # ask user for their password
-puts "Enter you password!"
-user_pw_input = gets.chomp
+# puts "Enter you password!"
+# user_pw_input = gets.chomp
+#
+# secure_pw = encrypt_password(user_pw_input)
+# print secure_pw
 
-secure_pw = encrypt_password(user_pw_input)
-print secure_pw
+# This nested method works bc the return value from encrypt_password is carried
+# to decode_pw as the new value
+p decode_pw(encrypt_password("swordfish"))
