@@ -13,7 +13,11 @@ def encrypt_password(pw)
   for pw_breakdown in 0..pw_length
     indv_pw_letter = user_password[pw_breakdown]
     # move each letter one letter forward
-    encrypt_pw += indv_pw_letter.next
+    if indv_pw_letter == "z"
+      encrypt_pw += "a"
+    else
+      encrypt_pw += indv_pw_letter.next
+    end
   end
   encrypt_pw
 end
@@ -44,3 +48,4 @@ puts "Enter you password!"
 user_pw_input = gets.chomp
 
 secure_pw = encrypt_password(user_pw_input)
+print secure_pw
