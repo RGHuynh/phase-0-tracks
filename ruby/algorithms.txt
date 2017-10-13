@@ -1,0 +1,8 @@
+- Input voice command to robot floor number
+- Start from floor number 1
+- Go through each floor number on the pad until it reaches the user input number
+  - If floor number does not equal to user input number:
+    - Add 1 to the floor number until it reaches the user input number
+  - Otherwise:
+    - Enter user number onto the pad.
+    - Tell user your floor has been inputed.
