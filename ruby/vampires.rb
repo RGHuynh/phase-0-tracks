@@ -58,10 +58,13 @@ for employees in 1..n.to_i
   end
 end
 
+# Tell user to forget about interview questions
+# Use for loop to add to dot sequence.
 dots = "."
 for sec in 1..4
   sleep(1)
   puts dots
   dots += "."
 end
+# print message at the end of loop
 puts "\nActually, never mind! What do these questions have to do with anything? Let's all be friends."
