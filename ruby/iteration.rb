@@ -1,3 +1,4 @@
+#release 1
 # setting up an array
 colors = ["red", "blue", "green"]
 
@@ -40,3 +41,47 @@ end
 
 # print to see hash .each works
 p people
+
+# Release 2
+
+numbers = [3,4,5,6,7,]
+
+# deletes number that are lower than 5
+numbers.delete_if do |number|
+  number < 5
+end
+p numbers
+
+# add 2 to all the numbers in array
+modified = numbers.collect do |number|
+  number + 2
+end
+p modified
+
+# shows how many numbers in an array is divisible by 2
+numbers.count do |number|
+  number %2 == 0
+end
+p numbers
+
+# show the location of index 3 in the array
+numbers.index do |number|
+  number == 3
+end
+p numbers
+
+hash_profile = {
+  name: "tom",
+  address: "poor",
+  home: "nowhere"
+}
+
+# delets a key name :name
+hash_profile.delete(:name) do |category, value|
+end
+p hash_profile
+
+# change each keys to uppercase
+hash_profile.each_key do |category|
+  puts category.upcase
+end
