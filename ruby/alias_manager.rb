@@ -42,14 +42,29 @@ end
 end
 
 
-puts "What is your first name?"
-first_name = gets.chomp
+# make a method to house questions
+def user_input
 
-puts "What is your last name?"
-last_name = gets.chomp
+  # store answer
+  answer = ""
 
-new_first_name = move_letter(first_name)
-new_last_name = move_letter(last_name)
-full_name = [new_first_name, new_last_name]
+  # continue input unti quit
+  until answer == 'quit'
+    puts "What is your first name?"
+    first_name = gets.chomp
 
-p full_name.rotate
+    puts "What is your last name?"
+    last_name = gets.chomp
+
+    new_first_name = move_letter(first_name)
+    new_last_name = move_letter(last_name)
+    full_name = [new_first_name, new_last_name]
+
+    p full_name.rotate
+
+    puts "do you want to continue?"
+    answer = gets.chomp
+  end
+end
+
+user_input
