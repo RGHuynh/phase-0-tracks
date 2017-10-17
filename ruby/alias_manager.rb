@@ -47,7 +47,7 @@ def user_input
 
   # store answer
   answer = ""
-
+  store_name = {}
   # continue input unti quit
   until answer == 'quit'
     puts "What is your first name?"
@@ -56,14 +56,20 @@ def user_input
     puts "What is your last name?"
     last_name = gets.chomp
 
-    new_first_name = move_letter(first_name)
-    new_last_name = move_letter(last_name)
-    full_name = [new_first_name, new_last_name]
+    original_full_name = "#{first_name} #{last_name}"
 
-    p full_name.rotate
+    new_first_name = move_letter(first_name).join
+    new_last_name = move_letter(last_name).join
+    new_full_name = new_last_name +" "+ new_first_name
+
+    store_name[original_full_name] = new_full_name
 
     puts "do you want to continue?"
     answer = gets.chomp
+  end
+
+  store_name.each do |x, y|
+  p "#{y} name is actually #{x}"
   end
 end
 
