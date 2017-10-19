@@ -56,3 +56,37 @@ def fib(input_number)
 end
 
 fib(100)
+
+
+Release 3
+
+
+
+# Pass array into argument
+def decending_order(array)
+  # Count the length of the array minus 1
+  array_count = array.length - 1
+
+  # Loop through until all numbers are in decending order
+  loop do
+
+    swapped = false
+    # Loop through each number from right to left:
+    for x in 1..array_count
+      # If number to the right is smaller than number to the left:
+      if array[-x] < array[-(x+1)]
+        # Swap number
+        array[-(x+1)], array[-x] = array[-x], array[-(x+1)]
+        swapped = true
+      end
+    end
+  # Break loop if no more swap are done
+    break if not swapped
+  end
+  # Print decending order
+  p array
+end
+
+a = [2,5,1,2,3,4,56,3,2,324,23,4,2,4,5,6]
+decending_order(a)
+    
