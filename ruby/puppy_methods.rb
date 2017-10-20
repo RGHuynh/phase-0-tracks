@@ -30,9 +30,10 @@ class Puppy
     end
   end
 
-  def initializ
+  def initialize
     puts "Initializing new puppy instance ..."
   end
+
 end
 
 bobby = Puppy.new
@@ -44,4 +45,38 @@ bobby.rollover
 bobby.dog_years(4)
 
 bobby.jump(4)
-bobby.initializ
+bobby
+
+class Monkey
+  def initialize
+    puts "What is my name?"
+    monkey_name = gets.chomp
+    puts "So my name is #{monkey_name}"
+  end
+
+  def throw_poop(number)
+    number.times do |t|
+      if t < (number - 1)
+        puts "You got hit by poop!"
+      else
+        puts "You dodge it!"
+      end
+    end
+  end
+
+  def back_flips(command)
+    if command == "flip"
+      puts "monkey flipped!"
+    else
+      puts "monkey flipped you off"
+    end
+  end
+
+  def talk
+    puts "What do you want boy!"
+  end
+end
+
+crazy_monkey = Monkey.new
+crazy_monkey.throw_poop(3)
+crazy_monkey.back_flips("flip")
