@@ -46,12 +46,10 @@ bobby.dog_years(4)
 
 bobby.jump(4)
 bobby
-
+#
 class Monkey
   def initialize
-    puts "What is my name?"
-    monkey_name = gets.chomp
-    puts "So my name is #{monkey_name}"
+    Monkey
   end
 
   def throw_poop(number)
@@ -72,11 +70,27 @@ class Monkey
     end
   end
 
-  def talk
-    puts "What do you want boy!"
+  def talk_crap
+    p "What do you want boy!"
+  end
+
+  def jump
+    p "jump"
   end
 end
+#
+# crazy_monkey = Monkey.new
+# crazy_monkey.throw_poop(3)
+# crazy_monkey.back_flips("flip")
+#
 
-crazy_monkey = Monkey.new
-crazy_monkey.throw_poop(3)
-crazy_monkey.back_flips("flip")
+monkey_array = []
+for t in 1..50
+  t = Monkey.new
+  monkey_array << t
+end
+
+monkey_array.each do |time|
+  time.talk_crap
+  time.jump
+end
