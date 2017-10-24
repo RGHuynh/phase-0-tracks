@@ -1,0 +1,22 @@
+class Santa
+  def speak
+    puts "Ho,ho, ho! Haaaaapy holiday"
+  end
+
+  def eat_milk_and_cookies (cookie_type)
+    puts "That was a good #{cookie_type}!"
+  end
+
+  def initialize
+    puts "Initializing Santa instance...."
+    gender
+    ethnicity
+  end
+
+  def shit
+    puts "santa needs to take a shit"
+  end
+end
+
+p x = Santa.new
+p x.speak
