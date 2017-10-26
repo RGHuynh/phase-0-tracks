@@ -15,6 +15,36 @@ class Santa
     puts "That was a good #{cookie_type}!"
   end
 
+  def celebrate_birthday
+    @age += 1
+  end
+
+  def get_mad_at(reindeer)
+    # take a reindeer name as an argument
+    # find reindeer name index
+    reindeer_index = @reindeer_ranking.index(reindeer)
+
+    # move it to last place in the reindeer ranking
+    reindeer_name = @reindeer_ranking[@reindeer_ranking.index(reindeer)]
+    @reindeer_ranking << reindeer_name
+
+    # delete the reindeer name
+
+    @reindeer_ranking.delete_at(reindeer_index)
+  end
+  #setter method
+  def gender=(set_gender)
+   @user_gender = set_gender
+  end
+  #getter method
+  def age
+   @age
+  end
+
+  def ethnicity
+    @user_ethnicity
+  end
+
 end
 
 
@@ -34,3 +64,6 @@ ethnicity2 = ["crazy","wild","cookie"]
 gender2.length.times do |t|
   santas << Santa.new(gender2[t], ethnicity2[t])
 end
+
+x = Santa.new("boy","shit")
+x.celebrate_birthday
