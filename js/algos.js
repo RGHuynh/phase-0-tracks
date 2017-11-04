@@ -48,5 +48,22 @@ function matchKey(hash1, hash2){
   }
 }
 
+// Give function a integer
+// Randomly pick letters from an array of letters one at a time
+// Add each letters to a new string variable
+
+function randomWord(numOfletters){
+  var abc = "abcdefghijklmnopqrstuvwxyz";
+  var alphabet = abc.split("");
+  var ranWord = "";
+
+  for (var i = 1; i <= numOfletters; i++){
+    var index = Math.floor(Math.random()*((abc.length) - 0) + 0);
+    ranWord += alphabet[index];
+  }
+  return ranWord
+}
+
 console.log(matchKey(hash1, hash2))
 longString()
+console.log(randomWord(3))
