@@ -1,0 +1,78 @@
+Display the information in one table (either table is fine).
+
+sqlite> SELECT * FROM students;
+1|Lez|3|1
+2|Alex|4|2
+3|Tom|49|3
+4|Crazy|3|4
+
+Update an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> UPDATE students
+   ...> SET age = 99
+   ...> WHERE grades_id = 2;
+
+   sqlite> SELECT * FROM students;
+1|Lez|3|1
+2|Alex|99|2
+3|Tom|49|3
+4|Crazy|3|4
+
+Display the information in both tables using one query.
+
+sqlite> SELECT students.name, students.age, grades.letters FROM students JOIN grades ON students.grades_id = grades.id;
+Lez|3|A
+Alex|99|B
+Tom|49|C
+Crazy|3|D
+
+Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+sqlite> SELECT students.name, students.age, grades.letters FROM students
+   ...> JOIN grades ON students.grades_id = grades.id
+   ...> WHERE students.age > 4;
+Alex|99|B
+Tom|49|C
+
+Delete an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> DELETE FROM students
+   ...> WHERE age > 4;
+sqlite> SELECT * FROM students;
+1|Lez|3|1
+4|Crazy|3|4
+
+
+sqlite> SELECT students.name, students.age, grades.letters
+   ...> FROM students NATURAL JOIN grades;
+Lez|3|A
+Crazy|3|D
+Tommy|32|F
+
+sqlite> SELECT students.name, students.age, grades.letters
+   ...> FROM students LEFT JOIN grades;
+Lez|3|A
+Lez|3|B
+Lez|3|C
+Lez|3|D
+Lez|3|F
+Crazy|3|A
+Crazy|3|B
+Crazy|3|C
+Crazy|3|D
+Crazy|3|F
+Tommy|32|A
+Tommy|32|B
+Tommy|32|C
+Tommy|32|D
+Tommy|32|F
+Jayson|23|A
+Jayson|23|B
+Jayson|23|C
+Jayson|23|D
+Jayson|23|F
+Grear|34|A
+Grear|34|B
+Grear|34|C
+Grear|34|D
+Grear|34|F
