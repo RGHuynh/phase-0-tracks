@@ -7,22 +7,9 @@ create_table_cmd = <<-SQL
     bulletin INTEGER,
     list_date DATE,
     list VARCHAR(255),
-    user_name INTEGER,
-    user_pw INTEGER,
-    FOREIGN KEY(user_name) REFERENCES user_acc(username),
-    FOREIGN KEY(user_name) REFERENCES user_acc(pw)
   );
 SQL
 
-create_user_table_cmd = <<-SQL
-CREATE TABLE IF NOT EXISTS user_acc(
-  id INTEGER PRIMARY KEY,
-  username VARCHAR(255),
-  pw VARCHAR(255)
-);
-SQL
-
-db.execute(create_user_table_cmd)
 db.execute(create_table_cmd)
 
 def create_todo_list(db, date, todo)
@@ -32,15 +19,9 @@ def create_todo_list(db, date, todo)
   )
 end
 
-def login(db, username, password)
-  db.execute(
-    "INSERT INTO user_acc(username, pw)
-    VALUES(?,?)",[username, password]
-  )
-end
 
 def things_to_do
-  p "Add to todo list"
+  p "What do you want to add to your todo list?"
   todo = gets.chomp
 end
 
@@ -54,4 +35,4 @@ until continue == "N"
   continue = gets.chomp.upcase
 end
 
-#   IF THERE IS MORE, KEEP ASKING
+# if there is something in the list aalredy, do not dublicate
