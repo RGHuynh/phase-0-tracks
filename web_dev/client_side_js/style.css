@@ -1,0 +1,32 @@
+/**{*/
+/*  border:1px solid green;*/
+/*}*/
+
+.mainbody{
+    padding-left: 40px;
+    padding-bottom: 20px;
+  }
+  
+  h2{
+    color: #1842AD;
+    text-align: center;
+    margin: 0px;
+  }
+  
+  p{
+    text-align: center;
+    margin-top: 0px;
+  
+  }
+  
+  #list{
+  
+    list-style-type: none;
+    padding-left:10px;
+  }
+  
+  li{
+  
+    padding:0px;
+    margin: 0px;
+  }
