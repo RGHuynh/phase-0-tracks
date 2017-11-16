@@ -4,11 +4,19 @@ document.getElementById("click").onclick = function(){
         item = document.createElement('li');
         inputBox_ray = document.getElementsByClassName("containment"),
         inputBox = inputBox_ray[0];
-      
-    item.appendChild(document.createTextNode(inputBox.value));
-    list_ray.appendChild(item);
+        checkbox = document.createElement("input")
+    if(inputBox.value !== ''){ 
+  
+      checkbox.setAttribute("type","checkbox");
+      item.appendChild(checkbox);
+      item.appendChild(document.createTextNode(inputBox.value));
+      list_ray.appendChild(item);
+    }
     return false;
   }
+  
+  
+  
   
   
   
